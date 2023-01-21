@@ -46,9 +46,9 @@ INSTALLED_APPS = [
     "djmoney",
     "electronics",
     "rest_framework",
-    "django_filters",
     "users",
-    'drf_spectacular'
+    'drf_spectacular',
+    'django_filters'
 
 ]
 
@@ -141,7 +141,6 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
-    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'], 
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema'
 }
 
