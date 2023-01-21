@@ -2,8 +2,8 @@
 
 from rest_framework import viewsets
 
-from electronics.models import TradingNetwork
-from electronics.serializers import NetworKSerializer
+from electronics.models import TradingNetwork, Provider
+from electronics.serializers import NetworKSerializer, ProviderKSerializer, ProviderUpdateSerialiser
 from rest_framework.response import Response
 
 
@@ -15,5 +15,11 @@ from rest_framework.response import Response
 
 
 class ProviderCRUD(viewsets.ModelViewSet):
-        queryset = TradingNetwork.objects.all()
-        serializer_class = NetworKSerializer
+        queryset = Provider.objects.all()
+        serializer_class = ProviderKSerializer
+
+        def get_serializer_class(self):
+            if self.action == "update":
+                return ProviderUpdateSerialiser
+
+            return ProviderKSerializer

@@ -19,7 +19,7 @@ class ProductsSerializer(serializers.ModelSerializer):
 class StaffSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ("first_name", "last_name")
+        fields = "__all__"
 
 
 class AddressCompanySerializer(serializers.ModelSerializer):
@@ -29,20 +29,26 @@ class AddressCompanySerializer(serializers.ModelSerializer):
 
 
 class ContactsSerializer(serializers.ModelSerializer):
-    address = AddressCompanySerializer(read_only=True)
+    address = AddressCompanySerializer()
     class Meta:
-        moel = Contacts
+        model = Contacts
         fields = "__all__"
 
 
 class ProviderKSerializer(serializers.ModelSerializer):
-    product = ProductsSerializer(many=True)
-    stuff = StaffSerializer(read_only=True)
+    product = ProductsSerializer()
+    stuff = StaffSerializer()
     name_trade_network = serializers.CharField(source='get_name_trade_network_display')
+    contacts = ContactsSerializer()
     class Meta:
         model = Provider
         fields = "__all__"
 
+
+
+class ProviderUpdateSerialiser(ProviderKSerializer):
+    class Meta:
+        read_only_fields = ("debt",)
 
 
 
