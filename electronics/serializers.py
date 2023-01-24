@@ -22,7 +22,7 @@ class StaffSerializer(WritableNestedModelSerializer):
         model = Stuff
         fields = ("first_name", "last_name", "is_active", "password", "username", "email")
 
-    
+        
 
 
 class AddressCompanySerializer(WritableNestedModelSerializer):
@@ -48,6 +48,8 @@ class ProviderKSerializer(WritableNestedModelSerializer):
         model = Provider
         fields = "__all__"
 
+    
+    
 
 
 class ProviderUpdateSerialiser(ProviderKSerializer):

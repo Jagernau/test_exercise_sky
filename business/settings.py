@@ -48,7 +48,8 @@ INSTALLED_APPS = [
     "rest_framework",
     "users",
     'drf_spectacular',
-    'django_filters'
+    'django_filters',
+    'rest_framework.authtoken'
 
 ]
 
@@ -142,7 +143,13 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
-    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema'
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+     'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ]
+
+
 }
 
 

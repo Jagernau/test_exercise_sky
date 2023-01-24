@@ -3,7 +3,6 @@ from electronics.mixins import Based_Mixin
 from users.models import User
 
 
-
 #Работники
 class Stuff(User):
     ...
@@ -87,6 +86,9 @@ class Provider(Based_Mixin):
         "Stuff", on_delete=models.CASCADE, blank=True, null=True, verbose_name="Работники"
     )
 
+        
+    
+
     def __str__(self):
         return self.title
 
@@ -137,3 +139,5 @@ class TradingNetwork(Based_Mixin):
     
     def __str__(self):
         return self.title
+
+

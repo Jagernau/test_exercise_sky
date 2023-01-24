@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
-
+from rest_framework.authtoken import views
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("electronics/", include("electronics.urls")),
@@ -26,5 +26,5 @@ urlpatterns = [
         SpectacularSwaggerView.as_view(url_name="schema"),
         name="swagger-ui",
     ),
-    path("user/", include("users.urls"))
+    path('user/', include("users.urls"))
 ]

@@ -7,7 +7,6 @@ from rest_framework.permissions import IsAuthenticated
 from electronics.models import TradingNetwork, Provider
 from electronics.permissions import ActivePermission
 from electronics.serializers import ProviderKSerializer, ProviderUpdateSerialiser, ProviderListSerialiser
-from rest_framework.response import Response
 
 
 
@@ -30,3 +29,4 @@ class ProviderCRUD(viewsets.ModelViewSet):
                 return ProviderListSerialiser
 
             return ProviderKSerializer
+
