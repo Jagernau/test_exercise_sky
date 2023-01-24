@@ -2,7 +2,7 @@ from django import forms
 from django.contrib import admin
 from django.db.models import QuerySet
 
-from electronics.models import TradingNetwork, Products, Provider, Stuff
+from electronics.models import TradingNetwork, Products, Provider, Stuff, Contacts, AddressCompany
 from django.contrib import admin
 
 
@@ -28,3 +28,5 @@ admin.site.register(TradingNetwork, NetworAdmine)
 admin.site.register(Products)
 admin.site.register(Provider)
 admin.site.register(Stuff)
+admin.site.register(AddressCompany)
+admin.site.register(Contacts)

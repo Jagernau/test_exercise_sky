@@ -32,7 +32,7 @@ class AddressCompany(models.Model):
 
     class Meta:
         verbose_name = "Адресс"
-        verbose_name_plural = "Адресаы"
+        verbose_name_plural = "Адреса"
 
     def __str__(self):
         return self.country
@@ -49,7 +49,7 @@ class Contacts(models.Model):
 
     class Meta:
         verbose_name = "Контакт"
-        verbose_name_plural = "Контактыы"
+        verbose_name_plural = "Контакты"
 
     def __str__(self):
         return self.email
