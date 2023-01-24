@@ -1,10 +1,9 @@
-from django.urls import path
 import  electronics.views as views
 
 
 from rest_framework.routers import DefaultRouter
 
 router = DefaultRouter()
-router.register(r'buyers', views.ProviderCRUD, basename='byers')
+router.register(r'providers', views.ProviderCRUD, basename='providers')
 urlpatterns = router.urls
 

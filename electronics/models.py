@@ -68,7 +68,7 @@ class Provider(Based_Mixin):
 
     name_trade_network = models.PositiveSmallIntegerField(
         verbose_name="Звено цепи", choices=Name.choices, null=True, blank=True
-    )
+)
     contacts = models.ForeignKey(
         "Contacts",
         on_delete=models.CASCADE,
